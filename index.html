@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eduardo Galeano — Vida, obra y frases</title>
+<meta name="description" content="Sitio de homenaje a Eduardo Galeano (1940–2015): su vida en fragmentos, su obra, sus frases con fuente y fotografías con licencia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============ PALETA · PAPEL Y TINTA ============ */
+:root{
+  --papel:#f2e9d8;
+  --papel-2:#e9dcc3;
+  --papel-3:#dfcfae;
+  --tinta:#20180f;
+  --tinta-suave:#4d4130;
+  --terracota:#9c3d1e;
+  --terracota-2:#7c2f15;
+  --noche:#27435a;
+  --oro:#a97c2f;
+  --linea:rgba(32,24,15,.22);
+  --sombra:0 18px 40px -22px rgba(32,24,15,.45);
+  --fuente-display:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --fuente-cuerpo:"EB Garamond",Georgia,"Times New Roman",serif;
+}
+[data-tema="noche"]{
+  --papel:#171310;
+  --papel-2:#221b14;
+  --papel-3:#2e2419;
+  --tinta:#ead9bd;
+  --tinta-suave:#b9a888;
+  --terracota:#d98a5f;
+  --terracota-2:#e8a87e;
+  --noche:#8fb0c9;
+  --oro:#cfa35a;
+  --linea:rgba(234,217,189,.22);
+  --sombra:0 18px 40px -22px rgba(0,0,0,.8);
+}
+/* ============ BASE ============ */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;
+  font-family:var(--fuente-cuerpo);
+  font-size:1.12rem;
+  line-height:1.75;
+  color:var(--tinta);
+  background:var(--papel);
+  -webkit-font-smoothing:antialiased;
+  transition:background .4s ease,color .4s ease;
+}
+/* grano de papel */
+body::after{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;z-index:999;
+  opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection{background:var(--terracota);color:var(--papel)}
+img{max-width:100%;display:block}
+a{color:var(--terracota);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{color:var(--terracota-2)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--terracota);outline-offset:3px;border-radius:2px}
+.saltos{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+.saltos:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;background:var(--tinta);color:var(--papel);padding:.6rem 1rem;z-index:2000}
+.wrap{width:min(1080px,92vw);margin-inline:auto}
+/* ============ BARRA SUPERIOR ============ */
+.barra{
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(10px);
+  background:color-mix(in srgb,var(--papel) 86%,transparent);
+  border-bottom:1px solid var(--linea);
+}
+.barra__dentro{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
+.marca{font-family:var(--fuente-display);font-weight:700;font-size:1.25rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tinta);text-decoration:none}
+.marca em{font-style:normal;color:var(--terracota)}
+.barra__nav{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap}
+.barra__nav a{
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--tinta-suave);text-decoration:none;
+}
+.barra__nav a:hover{color:var(--terracota)}
+.tema{
+  font-family:inherit;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+  background:none;border:1px solid var(--linea);color:var(--tinta);
+  padding:.35rem .7rem;border-radius:999px;cursor:pointer;
+}
+.tema:hover{border-color:var(--terracota);color:var(--terracota)}
+/* ============ HERO ============ */
+.hero{padding:clamp(3rem,8vw,6rem) 0 clamp(2.5rem,6vw,4.5rem);position:relative}
+.hero__grid{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.hero__ojo{
+  font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--terracota);
+  display:flex;align-items:center;gap:.8rem;margin:0 0 1.2rem;
+}
+.hero__ojo::before{content:"";width:44px;height:1px;background:var(--terracota)}
+.hero h1{
+  font-family:var(--fuente-display);font-weight:700;
+  font-size:clamp(3rem,9vw,6.4rem);line-height:.95;margin:0 0 .4rem;letter-spacing:-.01em;
+}
+.hero h1 .apellido{display:block;font-style:italic;font-weight:400;color:var(--terracota)}
+.hero__fechas{
+  font-size:.85rem;letter-spacing:.42em;text-transform:uppercase;color:var(--tinta-suave);
+  margin:0 0 1.6rem;
+}
+.hero__presentacion{font-size:clamp(1.15rem,2vw,1.35rem);line-height:1.6;max-width:44ch;margin:0 0 2rem;color:var(--tinta-suave)}
+.hero__presentacion strong{color:var(--tinta);font-weight:600}
+.hero__cita{
+  border-left:3px solid var(--terracota);
+  padding:.2rem 0 .2rem 1.2rem;margin:0 0 .6rem;
+}
+.hero__cita p{
+  font-family:var(--fuente-display);font-style:italic;
+  font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.45;margin:0;
+}
+.hero__cita footer{font-size:.85rem;letter-spacing:.08em;color:var(--tinta-suave);margin-top:.5rem}
+.hero__retrato{position:relative}
+.hero__retrato figure{
+  margin:0;background:var(--papel-2);border:1px solid var(--linea);
+  padding:10px;box-shadow:var(--sombra);transform:rotate(1.2deg);
+  transition:transform .5s ease;
+}
+.hero__retrato figure:hover{transform:rotate(0deg) translateY(-4px)}
+.hero__retrato img{width:100%;filter:grayscale(1) contrast(1.05)}
+.hero__retrato figcaption{
+  font-size:.75rem;letter-spacing:.08em;color:var(--tinta-suave);
+  padding:.6rem .2rem .2rem;text-align:center;
+}
+.hero__vela{
+  position:absolute;right:-14px;top:-14px;width:74px;height:74px;opacity:.5;
+}
+/* ============ SECCIONES ============ */
+.seccion{padding:clamp(3rem,7vw,5.5rem) 0;border-top:1px solid var(--linea)}
+.seccion__cabeza{display:flex;align-items:baseline;gap:1.2rem;margin-bottom:clamp(1.6rem,4vw,2.6rem)}
+.seccion__num{
+  font-family:var(--fuente-display);font-style:italic;font-size:1rem;color:var(--terracota);
+  letter-spacing:.1em;white-space:nowrap;
+}
+.seccion h2{
+  font-family:var(--fuente-display);font-weight:700;
+  font-size:clamp(2rem,4.5vw,3.1rem);line-height:1.05;margin:0;letter-spacing:-.01em;
+}
+.seccion__nota{font-size:.95rem;color:var(--tinta-suave);font-style:italic;margin:.6rem 0 0}
+/* ============ VIDA · FRAGMENTOS ============ */
+.frag{
+  display:grid;grid-template-columns:110px 1fr;gap:clamp(1rem,3vw,2.2rem);
+  padding:1.8rem 0;border-bottom:1px dashed var(--linea);
+}
+.frag:last-of-type{border-bottom:0}
+.frag__num{
+  font-family:var(--fuente-display);font-size:2.2rem;font-weight:700;color:var(--papel-3);
+  line-height:1;text-align:right;
+}
+[data-tema="noche"] .frag__num{color:var(--papel-3)}
+.frag h3{
+  font-family:var(--fuente-display);font-weight:600;font-size:1.5rem;margin:0 0 .5rem;
+}
+.frag h3::before{content:"§ ";color:var(--terracota)}
+.frag p{margin:0;max-width:66ch}
+.frag p + p{margin-top:.7rem}
+/* línea de tiempo */
+.tiempo{
+  margin-top:clamp(2.2rem,5vw,3.4rem);
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;
+  border:1px solid var(--linea);background:var(--papel-2);
+}
+.tiempo__celda{padding:1rem 1.1rem;border-right:1px solid var(--linea)}
+.tiempo__celda:last-child{border-right:0}
+.tiempo__año{
+  font-family:var(--fuente-display);font-weight:700;font-size:1.35rem;color:var(--terracota);
+  display:block;line-height:1.1;
+}
+.tiempo__txt{font-size:.92rem;line-height:1.45;color:var(--tinta-suave)}
+/* ============ OBRA · ÍNDICE ============ */
+.libros{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+.libros li{
+  display:grid;grid-template-columns:96px 1fr;gap:1.2rem;align-items:baseline;
+  padding:.85rem .4rem;border-bottom:1px solid var(--linea);
+  transition:background .25s ease,padding-left .25s ease;
+}
+.libros li:hover{background:var(--papel-2);padding-left:.9rem}
+.libros__año{font-family:var(--fuente-display);font-weight:700;color:var(--terracota);font-size:1.05rem}
+.libros__tit{font-family:var(--fuente-display);font-size:1.3rem;font-weight:600;font-style:italic}
+.libros__nota{font-size:.92rem;color:var(--tinta-suave)}
+.libros__etiq{
+  display:inline-block;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--linea);border-radius:999px;padding:.1rem .55rem;margin-left:.6rem;
+  color:var(--tinta-suave);vertical-align:middle;
+}
+.trilogia{
+  margin-top:clamp(2rem,4vw,3rem);border:1px solid var(--linea);background:var(--papel-2);
+  padding:clamp(1.2rem,3vw,2rem);
+}
+.trilogia h3{font-family:var(--fuente-display);font-size:1.5rem;margin:0 0 .4rem}
+.trilogia ol{margin:.6rem 0 0;padding-left:1.2rem}
+.trilogia li{margin-bottom:.35rem}
+.trilogia p{margin:.4rem 0 0;color:var(--tinta-suave);font-size:.98rem;max-width:70ch}
+/* ============ FRASES ============ */
+.citas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.cita{
+  background:var(--papel-2);border:1px solid var(--linea);padding:1.5rem 1.5rem 1.2rem;
+  position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.cita:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.cita::before{
+  content:"«";font-family:var(--fuente-display);font-size:4.4rem;line-height:1;
+  color:var(--terracota);opacity:.32;position:absolute;top:.35rem;right:1rem;
+}
+.cita blockquote{margin:0;font-size:1.18rem;line-height:1.55;font-style:italic}
+.cita figcaption,.cita footer{
+  margin-top:1rem;font-size:.82rem;letter-spacing:.06em;color:var(--tinta-suave);font-style:normal;
+}
+.cita footer strong{color:var(--tinta);font-weight:600}
+/* ============ GALERÍA ============ */
+.fotos{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem}
+.foto{margin:0;background:var(--papel-2);border:1px solid var(--linea);padding:8px 8px .6rem}
+.foto img{width:100%;height:260px;object-fit:cover;filter:grayscale(.35) sepia(.18);transition:filter .4s ease,transform .4s ease}
+.foto:hover img{filter:grayscale(0) sepia(0);transform:scale(1.02)}
+.foto figcaption{font-size:.8rem;color:var(--tinta-suave);padding:.6rem .2rem .2rem;line-height:1.45}
+.foto figcaption b{display:block;color:var(--tinta);font-weight:600;font-size:.85rem}
+/* ============ PIE ============ */
+.pie{border-top:1px solid var(--linea);margin-top:2rem;padding:2.4rem 0 3rem;font-size:.9rem;color:var(--tinta-suave)}
+.pie__cols{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem}
+.pie h4{font-family:var(--fuente-display);font-size:1.05rem;margin:0 0 .5rem;color:var(--tinta);letter-spacing:.04em}
+.pie ul{margin:0;padding-left:1.1rem}
+.pie li{margin-bottom:.25rem}
+.pie__nota{font-size:.82rem;border-top:1px dashed var(--linea);margin-top:1.6rem;padding-top:1rem}
+.pie__nota p{margin:.3rem 0}
+/* ============ REVELADO ============ */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition:none!important}
+}
+/* ============ RESPONSIVE ============ */
+@media (max-width:820px){
+  .hero__grid{grid-template-columns:1fr}
+  .hero__retrato{max-width:340px;margin-inline:auto}
+  .frag{grid-template-columns:64px 1fr}
+  .pie__cols{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .barra__nav{gap:.7rem}
+  .barra__nav a{font-size:.7rem;letter-spacing:.1em}
+  .libros li{grid-template-columns:1fr;gap:.1rem}
+  .tiempo{grid-template-columns:1fr 1fr}
+  .tiempo__celda:nth-child(2n){border-right:0}
+  .tiempo__celda{border-bottom:1px solid var(--linea)}
+}
+</style>
+</head>
+<body>
+<a class="saltos" href="#contenido">Ir al contenido</a>
+
+<header class="barra">
+  <div class="wrap barra__dentro">
+    <a class="marca" href="#arriba">Gale<em>ano</em></a>
+    <nav class="barra__nav" aria-label="Secciones">
+      <a href="#vida">Vida</a>
+      <a href="#obra">Obra</a>
+      <a href="#frases">Frases</a>
+      <a href="#fotos">Fotos</a>
+      <button class="tema" id="tema" type="button" aria-label="Cambiar entre tema papel y tema noche">Tema: papel</button>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="arriba">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="hero__ojo">Montevideo, Uruguay · 1940 — 2015</p>
+        <h1>Eduardo <span class="apellido">Galeano</span></h1>
+        <p class="hero__fechas">Periodista · Escritor · Cronista</p>
+        <p class="hero__presentacion">
+          Escribió la historia de América Latina desde sus vencidos, en fragmentos cortos que
+          caben en un puño y pesan como un siglo. <strong>Su palabra era un abrazo y una denuncia.</strong>
+        </p>
+        <blockquote class="hero__cita">
+          <p>«Al fin y al cabo, somos lo que hacemos para cambiar lo que somos».</p>
+          <footer>— <cite>Celebración de las contradicciones/2</cite> (2006), p. 111</footer>
+        </blockquote>
+      </div>
+      <div class="hero__retrato reveal">
+        <figure>
+          <img src="images/Eduardo_Galeano.jpg" alt="Retrato estilizado en blanco y negro de Eduardo Galeano" width="800" height="1100">
+          <figcaption>Retrato de Eduardo Galeano · Wikimedia Commons · CC BY-SA 4.0</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VIDA ============ -->
+  <section class="seccion" id="vida">
+    <div class="wrap">
+      <div class="seccion__cabeza">
+        <span class="seccion__num">I</span>
+        <h2>La vida en fragmentos</h2>
+      </div>
+      <p class="seccion__nota">Biografía contrastada con el artículo «Eduardo Galeano» de Wikipedia en español.</p>
+
+      <article class="frag reveal">
+        <div class="frag__num">1</div>
+        <div>
+          <h3>Nacimiento y oficio</h3>
+          <p>Eduardo Germán María Hughes Galeano nació el 3 de septiembre de 1940 en Montevideo, Uruguay,
+          en el seno de una familia de clase alta y católica. Tomó el apellido artístico de su madre, Licia Esther Galeano Muñoz.
+          A los 14 años vendió su primera caricatura política al semanario <em>El Sol</em>.</p>
+          <p>Antes de dedicarse a escribir, trabajó como obrero de fábrica, dibujante, pintor, mensajero, mecanógrafo y cajero de banco.</p>
+        </div>
+      </article>
+
+      <article class="frag reveal">
+        <div class="frag__num">2</div>
+        <div>
+          <h3>Marcha y Época</h3>
+          <p>Fue jefe de redacción del semanario <em>Marcha</em>, fundado por Carlos Quijano, a quien consideraba su
+          «padre periodístico». Por sus páginas pasaron Mario Vargas Llosa, Mario Benedetti, Adolfo Gilly, Alfredo Zitarrosa,
+          los hermanos Denis y Roberto Fernández Retamar, entre otros.</p>
+          <p>Dirigió el diario <em>Época</em> (1964–1966) y el Departamento de Publicaciones de la Universidad de la República (1965–1973).</p>
+        </div>
+      </article>
+
+      <article class="frag reveal">
+        <div class="frag__num">3</div>
+        <div>
+          <h3>Golpe, cárcel y exilio</h3>
+          <p>Tras el golpe de Estado del 27 de junio de 1973, fue encarcelado y obligado a abandonar Uruguay.
+          Su libro <em>Las venas abiertas de América Latina</em> fue censurado por las dictaduras de Uruguay, Argentina y Chile.</p>
+          <p>Se exilió en Argentina, donde fundó la revista <em>Crisis</em> con Juan Gelman.</p>
+        </div>
+      </article>
+
+      <article class="frag reveal">
+        <div class="frag__num">4</div>
+        <div>
+          <h3>España y Memoria del fuego</h3>
+          <p>En 1976 partió a España, donde escribió <em>Memoria del fuego</em> (1982–1986), su trilogía sobre la historia de América Latina.
+          Pasó un período en Estocolmo como parte del tribunal internacional sobre la invasión soviética de Afganistán (1979).</p>
+          <p>A inicios de 1985 retornó a Montevideo. Junto a Benedetti, Alfaro y otros, fundó el semanario <em>Brecha</em>.</p>
+        </div>
+      </article>
+
+      <article class="frag reveal">
+        <div class="frag__num">5</div>
+        <div>
+          <h3>Últimos años</h3>
+          <p>Se definió como un «marxista especial». En <em>Disculpen la molestia</em> escribió:
+          «¿Es justo un mundo que cada minuto destina 3 millones de dólares a los gastos militares, mientras cada minuto mueren 15 niños por hambre o enfermedad curable?».</p>
+          <p>En 2007 superó una operación de cáncer de pulmón. Falleció en Montevideo el 13 de abril de 2015, a los 74 años, a las 8:20 (GMT-3).</p>
+        </div>
+      </article>
+
+      <div class="tiempo reveal" role="list" aria-label="Línea de tiempo">
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">1940</span><span class="tiempo__txt">Nace en Montevideo el 3 de septiembre.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">1963</span><span class="tiempo__txt">Publica su primera novela, <em>Los días siguientes</em>.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">1971</span><span class="tiempo__txt"><em>Las venas abiertas de América Latina</em>.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">1973</span><span class="tiempo__txt">Golpe en Uruguay: cárcel y exilio.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">1976</span><span class="tiempo__txt">Se exilia en España.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">1982–86</span><span class="tiempo__txt">Escribe la trilogía <em>Memoria del fuego</em>.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">1985</span><span class="tiempo__txt">Regresa a Montevideo y funda <em>Brecha</em>.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">1989</span><span class="tiempo__txt"><em>El libro de los abrazos</em>.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">2007</span><span class="tiempo__txt">Supera una operación de cáncer de pulmón.</span></div>
+        <div class="tiempo__celda" role="listitem"><span class="tiempo__año">2015</span><span class="tiempo__txt">Muere en Montevideo, 13 de abril.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OBRA ============ -->
+  <section class="seccion" id="obra">
+    <div class="wrap">
+      <div class="seccion__cabeza">
+        <span class="seccion__num">II</span>
+        <h2>La obra</h2>
+      </div>
+      <p class="seccion__nota">Selección de títulos con año de publicación, según el listado de Wikipedia en español.</p>
+
+      <ol class="libros">
+        <li class="reveal"><span class="libros__año">1963</span><span><span class="libros__tit">Los días siguientes</span> <span class="libros__etiq">novela</span><br><span class="libros__nota">Su primera novela.</span></span></li>
+        <li class="reveal"><span class="libros__año">1968</span><span><span class="libros__tit">Su majestad el fútbol</span> <span class="libros__etiq">fútbol</span><br><span class="libros__nota">Sobre el juego que él llamó «su majestad».</span></span></li>
+        <li class="reveal"><span class="libros__año">1971</span><span><span class="libros__tit">Las venas abiertas de América Latina</span> <span class="libros__etiq">ensayo</span><br><span class="libros__nota">Historia económica del continente; censurada por las dictaduras de Uruguay, Argentina y Chile.</span></span></li>
+        <li class="reveal"><span class="libros__año">1978</span><span><span class="libros__tit">Días y noches de amor y de guerra</span> <span class="libros__etiq">crónica</span><br><span class="libros__nota">Premio Casa de las Américas 1978.</span></span></li>
+        <li class="reveal"><span class="libros__año">1989</span><span><span class="libros__tit">El libro de los abrazos</span> <span class="libros__etiq">relatos</span><br><span class="libros__nota">Se compone de 191 relatos breves e ilustraciones del autor.</span></span></li>
+        <li class="reveal"><span class="libros__año">1995</span><span><span class="libros__tit">El fútbol a sol y sombra</span> <span class="libros__etiq">fútbol</span><br><span class="libros__nota">Historia social del fútbol, con sus luces y sus sombras.</span></span></li>
+        <li class="reveal"><span class="libros__año">1998</span><span><span class="libros__tit">Patas arriba. La escuela del mundo al revés</span> <span class="libros__etiq">crónica</span><br><span class="libros__nota">Crónica de un mundo que recompensa al revés.</span></span></li>
+        <li class="reveal"><span class="libros__año">2004</span><span><span class="libros__tit">Bocas del tiempo</span> <span class="libros__etiq">relatos</span><br><span class="libros__nota">Historias contadas en voz del tiempo.</span></span></li>
+        <li class="reveal"><span class="libros__año">2008</span><span><span class="libros__tit">Espejos. Una historia casi universal</span> <span class="libros__etiq">historia</span><br><span class="libros__nota">Premio de Narrativa José María Arguedas 2011.</span></span></li>
+        <li class="reveal"><span class="libros__año">2011</span><span><span class="libros__tit">Los hijos de los días</span> <span class="libros__etiq">relatos</span><br><span class="libros__nota">Un relato para cada día del calendario.</span></span></li>
+        <li class="reveal"><span class="libros__año">2016</span><span><span class="libros__tit">El cazador de historias</span> <span class="libros__etiq">póstumo</span><br><span class="libros__nota">Publicado después de su muerte.</span></span></li>
+      </ol>
+
+      <div class="trilogia reveal">
+        <h3>Memoria del fuego (1982–1986)</h3>
+        <p>Trilogía que cuenta la historia de Hispanoamérica, desde la creación del mundo hasta nuestros días, en pequeños relatos de menos de una página.</p>
+        <ol>
+          <li><em>Los nacimientos</em> (1982) — desde la creación del mundo hasta el siglo XVII.</li>
+          <li><em>Las caras y las máscaras</em> (1984) — siglos XVIII y XIX.</li>
+          <li><em>El siglo del viento</em> (1986) — siglo XX.</li>
+        </ol>
+        <p>American Book Award 1989 por <em>Memorias del fuego</em>, según el listado de premios de Wikipedia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRASES ============ -->
+  <section class="seccion" id="frases">
+    <div class="wrap">
+      <div class="seccion__cabeza">
+        <span class="seccion__num">III</span>
+        <h2>Frases emblemáticas</h2>
+      </div>
+      <p class="seccion__nota">Texto literal y fuente según Wikiquote, que cita obra, editorial y página. Se reproducen sin alterar.</p>
+
+      <div class="citas">
+        <figure class="cita reveal">
+          <blockquote>«Al fin y al cabo, somos lo que hacemos para cambiar lo que somos».</blockquote>
+          <footer><strong>Celebración de las contradicciones/2</strong> (2006), p. 111</footer>
+        </figure>
+        <figure class="cita reveal">
+          <blockquote>«El poder es como un violín. Se toma con la izquierda y se toca con la derecha».</blockquote>
+          <footer><strong>Días y noches de amor y de guerra</strong> (Ediciones Era, 2000), p. 17</footer>
+        </figure>
+        <figure class="cita reveal">
+          <blockquote>«Es lícito confundir la prosperidad de una clase con el bienestar de un país?».</blockquote>
+          <footer><strong>Las venas abiertas de América Latina</strong> (Siglo XXI, 2004), p. 136</footer>
+        </figure>
+        <figure class="cita reveal">
+          <blockquote>«Los nadies: los hijos de nadie, los dueños de nada».</blockquote>
+          <footer><strong>El libro de los abrazos</strong>, capítulo «Los nadies»</footer>
+        </figure>
+        <figure class="cita reveal">
+          <blockquote>«La democracia es un lujo del norte. Al sur se le permite el espectáculo, que eso no se le niega a nadie. Y a nadie molesta mucho, al fin y al cabo, que la política sea democrática, siempre y cuando la economía no lo sea».</blockquote>
+          <footer><strong>Mapamundi/2</strong> (2006), p. 96</footer>
+        </figure>
+        <figure class="cita reveal">
+          <blockquote>«En sus diez mandamientos, Dios olvidó mencionar a la naturaleza. Entre las órdenes que nos envió desde el monte Sinaí, el Señor hubiera podido agregar, pongamos por caso: “Honrarás a la naturaleza de la que formas parte”. Pero no se le ocurrió».</blockquote>
+          <footer><strong>Cuatro frases que hacen crecer la nariz de Pinocho</strong></footer>
+        </figure>
+        <figure class="cita reveal">
+          <blockquote>«¿Es justo un mundo que cada minuto destina 3 millones de dólares a los gastos militares, mientras cada minuto mueren 15 niños por hambre o enfermedad curable?».</blockquote>
+          <footer><strong>Disculpen la molestia</strong> (2009)</footer>
+        </figure>
+        <figure class="cita reveal">
+          <blockquote>«En Argentina las locas de Plaza de Mayo serán un ejemplo de salud mental porque ellas se negaron a olvidar en los tiempos de la amnesia obligatoria».</blockquote>
+          <footer><strong>Artículo de prensa</strong> (abril de 2015)</footer>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOTOS ============ -->
+  <section class="seccion" id="fotos">
+    <div class="wrap">
+      <div class="seccion__cabeza">
+        <span class="seccion__num">IV</span>
+        <h2>Galería</h2>
+      </div>
+      <p class="seccion__nota">Fotografías e imagen de Wikimedia Commons, con su licencia. Hover para ver a color.</p>
+      <div class="fotos">
+        <figure class="foto reveal">
+          <img src="images/Eduardo_Galeano.jpg" alt="Retrato estilizado en blanco y negro de Eduardo Galeano" loading="lazy" width="800" height="1100">
+          <figcaption><b>Retrato estilizado</b>Wikimedia Commons · CC BY-SA 4.0</figcaption>
+        </figure>
+        <figure class="foto reveal">
+          <img src="images/Eduardo_Galeano_en_1984.jpg" alt="Eduardo Galeano joven, en 1984" loading="lazy" width="300" height="300">
+          <figcaption><b>Galeano en 1984</b>Wikimedia Commons · dominio público</figcaption>
+        </figure>
+        <figure class="foto reveal">
+          <img src="images/Eduardo_Galeano_conferenza_Vicenza_1.jpg" alt="Eduardo Galeano de perfil en una conferencia en Vicenza, Italia" loading="lazy" width="1024" height="768">
+          <figcaption><b>Conferencia en Vicenza (Italia)</b>Wikimedia Commons · dominio público</figcaption>
+        </figure>
+        <figure class="foto reveal">
+          <img src="images/Eduardo_Galeano_2009.jpg" alt="Eduardo Galeano en 2009" loading="lazy" width="800" height="1000">
+          <figcaption><b>Galeano en 2009</b>Wikimedia Commons · CC BY 2.0</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ PIE ============ -->
+<footer class="pie">
+  <div class="wrap">
+    <div class="pie__cols">
+      <div>
+        <h4>Fuentes y verificación</h4>
+        <ul>
+          <li>Biografía, obras y premios: artículo «Eduardo Galeano» de Wikipedia en español (consultado noviembre de 2026).</li>
+          <li>Citas textuales: Wikiquote en español, con obra, editorial y página según sus referencias.</li>
+          <li>Trilogía <em>Memoria del fuego</em>: artículo «Memoria del fuego» de Wikipedia en español.</li>
+          <li>Imágenes: Wikimedia Commons, licencias indicadas en cada pieza.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sobre este sitio</h4>
+        <p>Homenaje sin fines de lucro, hecho en un solo archivo HTML. Las citas pertenecen a sus obras; las imágenes, a sus autores según la licencia de Commons.</p>
+        <p>Si alguna atribución debe corregirse, escribime y lo arreglo.</p>
+      </div>
+    </div>
+    <div class="pie__nota">
+      <p><strong>Nota metodológica:</strong> no se incluyeron frases de atribución dudosa (como la de «la utopía está en el horizonte», de autoría discutida). Cada cita lleva su obra y año.</p>
+      <p>Eduardo Germán María Hughes Galeano · Montevideo, 3 de septiembre de 1940 — ídem, 13 de abril de 2015.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Tema papel / noche */
+(function(){
+  var btn=document.getElementById('tema');
+  var raiz=document.documentElement;
+  function poner(t){
+    raiz.setAttribute('data-tema',t);
+    btn.textContent='Tema: '+(t==='noche'?'noche':'papel');
+    try{localStorage.setItem('galeano-tema',t);}catch(e){}
+  }
+  var guardado=null;
+  try{guardado=localStorage.getItem('galeano-tema');}catch(e){}
+  poner(guardado||(matchMedia('(prefers-color-scheme: dark)').matches?'noche':'papel'));
+  btn.addEventListener('click',function(){poner(raiz.getAttribute('data-tema')==='noche'?'papel':'noche');});
+})();
+/* Revelado al hacer scroll */
+(function(){
+  if(!('IntersectionObserver' in window)){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible');});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
